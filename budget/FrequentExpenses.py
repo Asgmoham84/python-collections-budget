@@ -10,7 +10,9 @@ spending_categories = []
 for expense in expenses.list:
     spending_categories.append(expense.category)
 spending_counter = collections.Counter(spending_categories)
-top5 = spending_counter.most_common()
+print(spending_counter)
+top5 = spending_counter.most_common(5)
+print("Number of categories = " + str(spending_counter.__len__())) #len(spendingCounter)))
 categories, count = zip(*top5)
 fig, ax = plt.subplots()
 ax.bar(categories, count)
